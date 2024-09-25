@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { WalletConnectButton } from '@/components/ui/wallet-connect-button';
+import { WalletConnectButton } from '@/components/ui/connect-wallet-button';
 import { Connection, PublicKey, Transaction, SystemProgram, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { toast } from '@/hooks/use-toast';
 

@@ -15,7 +15,7 @@ import {
 import { LogIn, Moon, Sun, Menu } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { WalletButton } from "@/components/ui/wallet-button"
+import { WalletButton } from "@/components/ui/connect-wallet"
 
 const navigationItems = [
   {
