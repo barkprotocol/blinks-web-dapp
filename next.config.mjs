@@ -47,6 +47,7 @@ const nextConfig = {
     images: {
       domains: [
         'uploadcare.com',
+        'ucarecdn.com',
         'unsplash.com',
       ],
     },

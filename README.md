@@ -60,14 +60,18 @@
    NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID=your_mailchimp_audience_id
    NEXT_PUBLIC_MAILCHIMP_DATA_CENTER=your_mailchimp_data_center
    ```
+5. Auth config
 
-4. Start the Development Server:
+openssl genrsa -out jwtRS256.key 2048
+openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
+
+6. Start the Development Server:
 
    ```bash
    npm run dev
    ```
 
-5. Open your browser and navigate to `http://localhost:3000`.
+7. Open your browser and navigate to `http://localhost:3000`.
 
 ### Docker Setup (Optional)
 
