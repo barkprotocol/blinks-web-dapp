@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BARK - Blinks Web UI
+**Alpha version**
+
+## Overview
+
+**BARK - Blinks Web UI** is a user-friendly interface for the Blinks As A Service platform, enabling users to easily create, send, and manage SPL tokens, transactions, NFTs, gifts or airdrops on the Solana blockchain. This application provides a seamless experience for both NFT, gift creators and recipients.
+
+## Features
+
+- **Simple Gift Creation**: Quickly create gifts with just a few clicks.
+- **Cross-Wallet Support**: Recipients can claim gifts using any Solana-compatible wallet.
+- **Real-Time Tracking**: Monitor the status of gifts, including unclaimed and claimed gifts.
+- **Integration with Blinks As A Service**: Utilizes the Blinks protocol for native transaction handling across applications.
+- **Support for Various Use Cases**: Ideal for donations, crowdfunding, commerce, and micro-payments.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18 or higher)
+- npm (v8 or higher)
+- Docker (optional for containerization)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/barkprotocol/blinks-web-ui.git
+   cd blinks-web-ui
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   pnpm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Configure Environment Variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Create a `.env.local` file in the root of your project and add the following environment variables:
 
-## Deploy on Vercel
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=https://
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   POSTGRES_URL=postgresql://postgres.
+   BASE_URL=http://localhost:3000
+   AUTH_SECRET=your_auth_secret
+   SOLANA_NETWORK=devnet
+   SOLANA_MAINNET_RPC=https://api.mainnet-beta.solana.com
+   TOKEN_PROGRAM_ID=your_token_program_id
+   TOKEN_METADATA_PROGRAM_ID=your_token_metadata_program_id
+   HELIUS_API_URL=https://api.helius.xyz
+   HELIUS_API_KEY=your_helius_api_key
+   SHYFT_API_URL=https://api.shyft.network
+   SHYFT_API_KEY=your_shyft_api_key
+   STRIPE_SECRET_KEY=sk_test_your_secret_key
+   STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+   NEXT_PUBLIC_MAILCHIMP_API_KEY=your_mailchimp_api_key
+   NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID=your_mailchimp_audience_id
+   NEXT_PUBLIC_MAILCHIMP_DATA_CENTER=your_mailchimp_data_center
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Start the Development Server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`.
+
+### Docker Setup (Optional)
+
+If you prefer to run the application in a Docker container, follow these steps:
+
+1. Build the Docker image:
+
+   ```bash
+   docker build -t blinks-web-ui .
+   ```
+
+2. Run the Docker container:
+
+   ```bash
+   docker run -p 3000:3000 blinks-web-ui
+   ```
+
+3. Access the application at `http://localhost:3000`.
+
+## API Reference (not implemented)
+
+For detailed API documentation, refer to the [API Documentation](link-to-api-docs).
+
+## Contributing
+
+We welcome contributions to Blinks Web UI! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
