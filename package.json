@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "description": "",
+  "name": "blinks-web-ui",
+  "description": "BARK Blinks dApp is a user-friendly interface for the Blinks As A Service platform, enabling users to easily create, send, and manage SPL tokens, transactions, NFTs, gifts or airdrops on the Solana blockchain.",
   "version": "0.1.0",
   "author": "BARK Protocol",
   "private": true,
