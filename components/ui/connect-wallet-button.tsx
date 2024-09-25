@@ -1,86 +1,34 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import { useWallet } from '@solana/wallet-adapter-react';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { Button } from '@/components/ui/button';
-import { toast } from '@/hooks/use-toast';
-import { Loader2 } from 'lucide-react';
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useWalletModal } from '@solana/wallet-adapter-react-ui'
+import { Button } from "@/components/ui/button"
+import { Wallet } from 'lucide-react'
 
-export function WalletConnectButton() {
-  const { connected, connecting, disconnect, publicKey } = useWallet();
-  const [isClient, setIsClient] = useState(false);
+export const ConnectWalletButton: React.FC = () => {
+  const { wallet, connect, disconnect, connecting, connected } = useWallet()
+  const { setVisible } = useWalletModal()
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
+  const handleClick = () => {
     if (connected) {
-      toast({
-        title: "Wallet Connected",
-        description: `Connected to ${publicKey?.toBase58().slice(0, 4)}...${publicKey?.toBase58().slice(-4)}`,
-        variant: "default",
-      });
+      disconnect()
+    } else if (wallet) {
+      connect().catch(() => {})
+    } else {
+      setVisible(true)
     }
-  }, [connected, publicKey]);
-
-  const handleDisconnect = async () => {
-    try {
-      await disconnect();
-      toast({
-        title: "Wallet Disconnected",
-        description: "Your wallet has been disconnected.",
-        variant: "default",
-      });
-    } catch (error) {
-      console.error('Error disconnecting wallet:', error);
-      toast({
-        title: "Disconnection Error",
-        description: "An error occurred while disconnecting your wallet. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
-
-  if (!isClient) {
-    return (
-      <Button disabled className="bg-[#D0BFB4] hover:bg-[#C0AFA4] text-gray-800 font-syne">
-        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-        Loading...
-      </Button>
-    );
-  }
-
-  if (connected) {
-    return (
-      <Button
-        onClick={handleDisconnect}
-        className="bg-[#D0BFB4] hover:bg-[#C0AFA4] text-gray-800 font-syne"
-      >
-        Disconnect Wallet
-      </Button>
-    );
   }
 
   return (
-    <WalletMultiButton
-      className="!bg-[#D0BFB4] !hover:bg-[#C0AFA4] !text-gray-800 !font-syne !rounded-md !h-10 !px-4 !py-2"
-      style={{
-        fontFamily: 'var(--font-syne)',
-        fontSize: '14px',
-        fontWeight: 500,
-        lineHeight: '20px',
-      }}
+    <Button 
+      onClick={handleClick}
+      className="bg-[#D0BFB4] text-gray-900 hover:bg-[#C0AFA4] transition-colors flex items-center space-x-2 px-4 py-2 rounded-full"
+      disabled={connecting}
     >
-      {connecting ? (
-        <>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Connecting...
-        </>
-      ) : (
-        'Connect Wallet'
-      )}
-    </WalletMultiButton>
-  );
+      <Wallet className="h-5 w-5" />
+      <span>
+        {connecting ? 'Connecting...' : connected ? 'Disconnect' : 'Connect Wallet'}
+      </span>
+    </Button>
+  )
 }
