@@ -1,5 +1,7 @@
-# BARK - Blinks Web UI
+# BARK - Blinks Web Dapp
 **Alpha version**
+
+Production version: https://github.com/barkprotocol/blink-as-a-service
 
 ## Overview
 

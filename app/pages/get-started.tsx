@@ -14,7 +14,7 @@ import { WalletConnectButton } from '@/components/ui/connect-wallet-button';
 import { Connection, PublicKey, Transaction, SystemProgram, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { toast } from '@/hooks/use-toast';
 
-// Mock BARK BLINK SDK
+// BARK BLINK SDK
 class BarkBlinkSDK {
   constructor(private apiKey: string, private connection: Connection) {}
 

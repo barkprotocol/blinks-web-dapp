@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://barkblink.app",
+    url: "https://blinkprotocol.app",
     siteName: "BARK BLINK",
     title: "BARK BLINK - Revolutionizing Blockchain Interactions",
     description: "BARK BLINK is a cutting-edge blockchain platform that transforms the way you handle digital transactions.",
     images: [
       {
-        url: "https://barkblink.app/og-image.jpg",
+        url: "https://blinkprotocol.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "BARK BLINK",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BARK BLINK - Revolutionizing Blockchain Interactions",
     description: "BARK BLINK is a cutting-edge blockchain platform that transforms the way you handle digital transactions.",
-    images: ["https://barkblink.app/twitter-image.jpg"],
-    creator: "@barkblink",
+    images: ["https://blinkprotocol.app/twitter-image.png"],
+    creator: "@bark_protocol",
   },
 };

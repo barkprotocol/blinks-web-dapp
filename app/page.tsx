@@ -183,7 +183,7 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 leading-tight">Welcome to BARK BLINK</h1>
             <p className="text-xl sm:text-2xl mb-10 text-gray-700 max-w-3xl mx-auto">The Blink As A Service application for creating and managing Solana Blinks</p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link href="/blinkboard">
+              <Link href="/pages/blinkboard/">
                 <Button className="w-full sm:w-auto bg-[#D0BFB4] text-gray-900 hover:bg-[#C0AFA4] transition-colors text-lg px-8 py-3 rounded-full">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
